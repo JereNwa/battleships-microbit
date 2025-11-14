@@ -1,4 +1,4 @@
-A sma# battleships-microbit
+# battleships-microbit
 This is a micro:bit game project that I created in school with JavaScript (or TypeScript if you want to be precise.). It is a battleships game.
 
 ## How to play
