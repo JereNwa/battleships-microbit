@@ -1,3 +1,6 @@
+/**
+ * basic.showString("Game Start")
+ */
 input.onButtonPressed(Button.A, function () {
     if (sprite.get(LedSpriteProperty.Y) < 4 && sprite.get(LedSpriteProperty.X) == 4) {
         sprite.set(LedSpriteProperty.X, 0)
@@ -12,6 +15,12 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.AB, function () {
     radio.sendValue("SpriteX", sprite.get(LedSpriteProperty.X))
     radio.sendValue("SpriteY", sprite.get(LedSpriteProperty.Y))
+})
+input.onButtonPressed(Button.B, function () {
+    sprite.change(LedSpriteProperty.Y, 1)
+    if (sprite.get(LedSpriteProperty.Y) == 4) {
+        sprite.set(LedSpriteProperty.Y, 0)
+    }
 })
 radio.onReceivedValue(function (name, value) {
     if (name == "SpriteX") {
@@ -29,4 +38,3 @@ let BombX = 0
 let sprite: game.LedSprite = null
 radio.setGroup(11)
 sprite = game.createSprite(0, 0)
-basic.showString("Game Start")
